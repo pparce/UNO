@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@+id/avatar_negocio"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/ic_account_circle"></ImageView>
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Esta es un apublicacion que tengo que poner aqui para simular la informacion del producto. No tomar en cuenta la falta de ortografia porfavor."
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+</LinearLayout>
