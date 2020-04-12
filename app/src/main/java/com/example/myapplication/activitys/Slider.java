@@ -70,7 +70,7 @@ public class Slider extends AppCompatActivity {
         changeStatusBarColor();
 
         myViewPagerAdapter = new MyViewPagerAdapter();
-//        viewPager.setAdapter(myViewPagerAdapter);
+        viewPager.setAdapter(myViewPagerAdapter);
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
 
         btnSkip.setOnClickListener(new View.OnClickListener() {
