@@ -7,26 +7,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
-
-import com.ajts.androidmads.telegrambotlibrary.Telegram;
-import com.ajts.androidmads.telegrambotlibrary.Utils.TelegramCallback;
-import com.ajts.androidmads.telegrambotlibrary.models.GetMe;
-import com.ajts.androidmads.telegrambotlibrary.models.Message;
 import com.example.myapplication.R;
 import com.example.myapplication.adapters.ViewPagerPrincipal;
 import com.example.myapplication.utiles.expandablelayout.ExpandableLayout;
 import com.example.myapplication.utiles.fab.FloatingActionMenu;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -92,13 +81,13 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
             }
         });*/
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         /*DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -112,11 +101,11 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);*/
-        tab = (TabLayout) findViewById(R.id.tab);
+        tab = findViewById(R.id.tab);
         tab.addTab(tab.newTab().setText(getResources().getString(R.string.tab_principal_inicio)));
         tab.addTab(tab.newTab().setText(getResources().getString(R.string.tab_principal_siguiendo)));
         tab.addTab(tab.newTab().setText(getResources().getString(R.string.tab_principal_destacado)));
-        pager = (ViewPager) findViewById(R.id.viewpager);
+        pager = findViewById(R.id.viewpager);
         pagerAdaptor = new ViewPagerPrincipal(this, getSupportFragmentManager(), tab.getTabCount());
         pager.setAdapter(pagerAdaptor);
         pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tab));
@@ -170,14 +159,14 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
 
         }*/
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {

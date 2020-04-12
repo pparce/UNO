@@ -8,7 +8,7 @@
     <color name="blanco">#ffffff</color>
     <color name="negro">#00060C</color>
     <color name="negro_transparente">#3300060C</color>
-    <color name="gris_neutro">#8D8D8D</color>
+    <color name="gris_neutro">#e6e6e6</color>
     <color name="gris_claro">#DDDDDD</color>
 
     <color name="bg_screen1">#f64c73</color>
