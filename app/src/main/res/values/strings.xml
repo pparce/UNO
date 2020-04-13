@@ -20,6 +20,9 @@
     <string name="action_report">Reportar</string>
     <string name="action_aceptar">Aceptar</string>
 
+    <string name="navigation_drawer_principal">Principal</string>
+    <string name="navigation_drawer_siguiendo">Siguiendo</string>
+    <string name="navigation_drawer_destacado">Destacado</string>
     <string name="navigation_drawer_favorito">Favoritos</string>
     <string name="navigation_drawer_tops">Tops</string>
     <string name="navigation_drawer_informacion">Informacion</string>

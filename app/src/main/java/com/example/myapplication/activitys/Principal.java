@@ -1,5 +1,6 @@
 package com.example.myapplication.activitys;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.telecom.Call;
 import android.util.Log;
@@ -108,12 +109,15 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         return true;
     }
 
-    /*@Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
-    }*/
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        if (id == R.id.action_buscar) {
+            startActivity(new Intent(Principal.this, Buscar.class));
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {

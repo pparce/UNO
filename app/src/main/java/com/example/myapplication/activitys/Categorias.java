@@ -1,5 +1,6 @@
 package com.example.myapplication.activitys;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.myapplication.R;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,12 +27,14 @@ public class Categorias extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     AdapterCategorias adapterCategorias;
+    List<Integer> listaSeleccionadas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorias);
         initView();
+
     }
 
     private void initView() {
@@ -38,11 +42,33 @@ public class Categorias extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        listaSeleccionadas = new ArrayList<>();
+
         layoutManager = new LinearLayoutManager(Categorias.this);
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(layoutManager);
         adapterCategorias = new AdapterCategorias(Categorias.this, getListaCategorias());
         recyclerView.setAdapter(adapterCategorias);
+        adapterCategorias.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = recyclerView.getChildAdapterPosition(v);
+                int id = adapterCategorias.getLista().get(position).getId();
+                if (v.isSelected()) {
+                    v.setSelected(false);
+                    listaSeleccionadas.remove(listaSeleccionadas.indexOf(id));
+                } else {
+                    v.setSelected(true);
+                    listaSeleccionadas.add(id);
+                }
+
+                if (listaSeleccionadas.size() >= 3) {
+                    menu.findItem(R.id.action_done).setVisible(true);
+                } else {
+                    menu.findItem(R.id.action_done).setVisible(false);
+                }
+            }
+        });
 
     }
 
@@ -73,7 +99,7 @@ public class Categorias extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.principal, menu);
+        getMenuInflater().inflate(R.menu.categorias, menu);
         this.menu = menu;
         return super.onCreateOptionsMenu(menu);
     }
@@ -84,6 +110,9 @@ public class Categorias extends AppCompatActivity {
         int id = item.getItemId();
         if (id == android.R.id.home) {
             onBackPressed();
+        } else if (id == R.id.action_done) {
+            startActivity(new Intent(Categorias.this, Principal.class));
+            finish();
         }
         return super.onOptionsItemSelected(item);
     }

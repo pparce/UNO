@@ -43,10 +43,14 @@ public class AdapterCategorias extends RecyclerView.Adapter<AdapterCategorias.Ma
 
     }
 
+    public List<ModeloCategoria> getLista() {
+        return list;
+    }
+
     @Override
     public MasonryView onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.cv, parent, false);
+        layoutView = LayoutInflater.from(parent.getContext()).inflate(R.layout.cv_categoria, parent, false);
 
         MasonryView masonryView = new MasonryView(layoutView);
         return masonryView;
@@ -85,7 +89,7 @@ public class AdapterCategorias extends RecyclerView.Adapter<AdapterCategorias.Ma
     public boolean onLongClick(View view) {
         if (onLong != null)
             onLong.onLongClick(view);
-        return false;
+        return true;
     }
 
 
