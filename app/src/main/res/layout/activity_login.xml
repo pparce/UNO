@@ -7,9 +7,8 @@
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="@color/colorPrimary"
     tools:context=".activitys.Login">
-
-
 
     <TextView
         android:id="@+id/textView2"

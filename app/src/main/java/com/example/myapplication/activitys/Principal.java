@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Toast;
+
 import com.example.myapplication.R;
 import com.example.myapplication.adapters.ViewPagerPrincipal;
 import com.example.myapplication.utiles.expandablelayout.ExpandableLayout;
@@ -40,36 +41,9 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         setContentView(R.layout.activity_principal);
 
         initView();
+    }
 
-        /*String id = "";
-
-        Telegram telegram = new Telegram("1042384246:AAEEXZ8eW3BWdbM38uDWevvjWmft9pyjRy0");
-        telegram.getMe(new TelegramCallback<GetMe>() {
-            @Override
-            public void onResponse(okhttp3.Call call, GetMe response) {
-                id = response.
-            }
-
-            @Override
-            public void onFailure(okhttp3.Call call, Exception e) {
-
-            }
-        });
-
-        telegram.sendMessage("<Channel-Name or Chat-ID>", "TelegramBotLibrary", new TelegramCallback<Message>() {
-            @Override
-            public void onResponse(okhttp3.Call call, Message response) {
-                Log.v("response.body()", response.isOk() + "");
-            }
-
-            @Override
-            public void onFailure(okhttp3.Call call, Exception e) {
-
-            }
-        });
-*/    }
-
-    private void initView(){
+    private void initView() {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         /*FloatingActionButton fab = findViewById(R.id.fab);
