@@ -1,5 +1,6 @@
 package com.example.myapplication.activitys;
 
+import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telecom.Call;
@@ -11,6 +12,8 @@ import android.widget.Toast;
 
 import com.example.myapplication.R;
 import com.example.myapplication.adapters.ViewPagerPrincipal;
+import com.example.myapplication.modelos.ModeloCategoria;
+import com.example.myapplication.utiles.App;
 import com.example.myapplication.utiles.expandablelayout.ExpandableLayout;
 import com.example.myapplication.utiles.fab.FloatingActionMenu;
 import com.google.android.material.navigation.NavigationView;
@@ -23,6 +26,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -77,6 +82,9 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);*/
         tab = findViewById(R.id.tab);
+        /*for (int i = 0; i < getListaCategorias().size(); i++) {
+            tab.addTab(tab.newTab().setText(App.listaCategorias.get(i).getTitulo()));
+        }*/
         tab.addTab(tab.newTab().setText(getResources().getString(R.string.tab_principal_inicio)));
         tab.addTab(tab.newTab().setText(getResources().getString(R.string.tab_principal_siguiendo)));
         tab.addTab(tab.newTab().setText(getResources().getString(R.string.tab_principal_destacado)));
@@ -100,6 +108,31 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
 
             }
         });
+    }
+
+    private List<ModeloCategoria> getListaCategorias() {
+        String[] aux = {
+                "Hogar",
+                "Moda y Belleza",
+                "Recreacion",
+                "Animales",
+                "Electronica",
+                "Gastonomia",
+                "Educacion",
+                "Viajes",
+                "Entretenimiento",
+                "Deportes",
+                "Fotografia",
+                "Autos",
+                "Servicios"
+        };
+        List<ModeloCategoria> listaAux = new ArrayList<>();
+        for (int i = 0; i < aux.length; i++) {
+            ModeloCategoria modelo = new ModeloCategoria();
+            modelo.setTitulo(aux[i]);
+            listaAux.add(modelo);
+        }
+        return listaAux;
     }
 
     @Override
