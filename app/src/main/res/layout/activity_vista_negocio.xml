@@ -52,7 +52,7 @@
 
     <include layout="@layout/content_vista_negocio" />
 
-    <com.example.myapplication.utiles.CircleImageView
+    <cu.uno.utiles.CircleImageView
         android:id="@+id/circle"
         android:layout_width="@dimen/avatar_size"
         android:layout_height="@dimen/avatar_size"

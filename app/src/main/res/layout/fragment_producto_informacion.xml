@@ -13,7 +13,7 @@
 
         <fragment
             android:id="@+id/fragment"
-            android:name="com.example.myapplication.fragments.FragmentPrincipalSiguiendo"
+            android:name="com.example.uno.fragments.FragmentPrincipalSiguiendo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
