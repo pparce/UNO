@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_principal">
+    app:startDestination="@+id/nav_inicio">
 
     <fragment
-        android:id="@+id/nav_principal"
-        android:name="cu.uno.ui.principal.PrincipalFragment"
+        android:id="@+id/nav_inicio"
+        android:name="cu.uno.ui.inicio.InicioFragment"
         android:label="@string/nav_principal"
         tools:layout="@layout/fragment_principal" />
     <fragment
-        android:id="@+id/nav_siguiendo"
-        android:name="cu.uno.ui.siguiendo.SiguiendoFragment"
-        android:label="@string/nav_siguiendo"
+        android:id="@+id/nav_negocio"
+        android:name="cu.uno.ui.negocios.NegociosFragment"
+        android:label="@string/nav_negocios"
         tools:layout="@layout/fragment_siguiendo" />
 
    <!--

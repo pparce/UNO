@@ -4,10 +4,12 @@
     <color name="colorPrimaryDark">#FFFFFF</color>
     <color name="colorSecondary">#141515</color>
     <color name="colorAccent">#00060C</color>
+    <color name="colorPressed">#202020</color>
 
     <color name="blanco">#ffffff</color>
     <color name="negro">#00060C</color>
     <color name="negro_transparente">#3300060C</color>
+    <color name="blanco_transparente">#BFFFFFFF</color>
     <color name="gris_neutro">#e6e6e6</color>
     <color name="gris_claro">#DDDDDD</color>
 

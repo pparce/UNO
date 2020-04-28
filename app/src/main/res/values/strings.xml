@@ -9,9 +9,14 @@
 
     <string name="categoria_info">Selecciona al menos tres categorias</string>
 
+    <string name="fab_producto">Nuevo Producto</string>
+    <string name="fab_publicacion">Publicación</string>
+    <string name="fab_servicio">Servicio</string>
+    <string name="fab_solicitud">Solicitud</string>
 
     <string name="nav_principal">Principal</string>
-    <string name="nav_siguiendo">Siguiendo</string>
+    <string name="nav_negocios">Negocios</string>
+
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
 
@@ -21,16 +26,12 @@
     <string name="action_report">Reportar</string>
     <string name="action_aceptar">Aceptar</string>
 
-    <string name="navigation_drawer_principal">Principal</string>
-    <string name="navigation_drawer_siguiendo">Siguiendo</string>
+    <string name="navigation_drawer_inicio">Principal</string>
+    <string name="navigation_drawer_negocio">Negocios</string>
     <string name="navigation_drawer_destacado">Destacado</string>
     <string name="navigation_drawer_favorito">Favoritos</string>
     <string name="navigation_drawer_tops">Tops</string>
     <string name="navigation_drawer_informacion">Informacion</string>
-
-    <string name="fab_product">Producto</string>
-    <string name="fab_service">Servicio</string>
-    <string name="fab_publicacion">Publicacion</string>
 
     <string name="tab_principal_inicio">Inicio</string>
     <string name="tab_principal_siguiendo">Siguiendo</string>
