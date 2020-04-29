@@ -15,18 +15,23 @@
         android:name="cu.uno.ui.negocios.NegociosFragment"
         android:label="@string/nav_negocios"
         tools:layout="@layout/fragment_siguiendo" />
+    <activity
+        android:id="@+id/nav_favoritos"
+        android:name="cu.uno.activitys.Favoritos"
+        android:label="activity_favoritos"
+        tools:layout="@layout/activity_favoritos" />
 
-   <!--
+    <!--
 
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.uno.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+     <fragment
+         android:id="@+id/nav_gallery"
+         android:name="com.example.uno.ui.gallery.GalleryFragment"
+         android:label="@string/menu_gallery"
+         tools:layout="@layout/fragment_gallery" />
 
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.uno.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />-->
+     <fragment
+         android:id="@+id/nav_slideshow"
+         android:name="com.example.uno.ui.slideshow.SlideshowFragment"
+         android:label="@string/menu_slideshow"
+         tools:layout="@layout/fragment_slideshow" />-->
 </navigation>

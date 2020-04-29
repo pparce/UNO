@@ -2,25 +2,15 @@ package cu.uno.activitys;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
-import com.wangjie.rapidfloatingactionbutton.RapidFloatingActionButton;
-import com.wangjie.rapidfloatingactionbutton.RapidFloatingActionHelper;
-import com.wangjie.rapidfloatingactionbutton.RapidFloatingActionLayout;
-import com.wangjie.rapidfloatingactionbutton.contentimpl.labellist.RFACLabelItem;
-import com.wangjie.rapidfloatingactionbutton.contentimpl.labellist.RapidFloatingActionContentLabelList;
-import com.wangjie.rapidfloatingactionbutton.util.RFABShape;
-import com.wangjie.rapidfloatingactionbutton.util.RFABTextUtil;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.view.GravityCompat;
@@ -32,24 +22,19 @@ import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import cu.uno.R;
+import cu.uno.utiles.bsimagepicker.BSImagePicker;
 
-public class Principal extends AppCompatActivity implements RapidFloatingActionContentLabelList.OnRapidFloatingActionContentLabelListListener {
+public class Principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     public static TabLayout tab;
     private AppBarConfiguration mAppBarConfiguration;
-    int atras = 0;
     Context context = Principal.this;
-
-    private RapidFloatingActionLayout rfaLayout;
-    private RapidFloatingActionButton rfaBtn;
-    private RapidFloatingActionHelper rfabHelper;
+    DrawerLayout drawer;
+    int atras = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,17 +45,8 @@ public class Principal extends AppCompatActivity implements RapidFloatingActionC
     }
 
     private void initView() {
-//        initFAb();
+        setupFAB();
 
-        final FloatingActionMenu floatingActionButton = findViewById(R.id.menu);
-        floatingActionButton.setClosedOnTouchOutside(true);
-        ImageButton imageButton = findViewById(R.id.menu_publicacion);
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                floatingActionButton.close(true);
-            }
-        });
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         tab = findViewById(R.id.tab);
@@ -79,12 +55,13 @@ public class Principal extends AppCompatActivity implements RapidFloatingActionC
         tab.addTab(tab.newTab().setText("Destacado"));
 
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_inicio, R.id.nav_negocio)
+                R.id.nav_inicio, R.id.nav_negocio, R.id.nav_favoritos)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -99,6 +76,28 @@ public class Principal extends AppCompatActivity implements RapidFloatingActionC
                 } else if (id == R.id.nav_negocio) {
                     tab.setVisibility(View.GONE);
                 }
+            }
+        });
+    }
+
+    private void setupFAB (){
+        final FloatingActionMenu floatingActionMenu = findViewById(R.id.menu);
+        floatingActionMenu.setClosedOnTouchOutside(true);
+        ImageButton addPublicacion = findViewById(R.id.menu_publicacion);
+        addPublicacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, AddPublicacion.class));
+                floatingActionMenu.close(true);
+
+            }
+        });
+        ImageButton addSolicitud = findViewById(R.id.menu_solicitud);
+        addSolicitud.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(context, AddSolicitud.class));
+                floatingActionMenu.close(true);
             }
         });
     }
@@ -154,14 +153,13 @@ public class Principal extends AppCompatActivity implements RapidFloatingActionC
     }
 
     @Override
-    public void onRFACItemLabelClick(int position, RFACLabelItem item) {
-        Toast.makeText(context, "clicked label: " + position, Toast.LENGTH_SHORT).show();
-        rfabHelper.toggleContent();
-    }
-
-    @Override
-    public void onRFACItemIconClick(int position, RFACLabelItem item) {
-        Toast.makeText(context, "clicked icon: " + position, Toast.LENGTH_SHORT).show();
-        rfabHelper.toggleContent();
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        int id = menuItem.getItemId();
+        if (id == R.id.nav_favoritos) {
+            startActivity(new Intent(context, Favoritos.class));
+        }
+        Toast.makeText(context, "click", Toast.LENGTH_SHORT).show();
+        drawer.closeDrawer(GravityCompat.START);
+        return false;
     }
 }
