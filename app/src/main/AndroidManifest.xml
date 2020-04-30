@@ -24,8 +24,8 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".activitys.AddPublicacion"
-            android:label="@string/title_activity_add_publicacion"
+            android:name=".activitys.AddProducto"
+            android:label="@string/title_activity_add_producto"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity

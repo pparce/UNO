@@ -26,7 +26,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import cu.uno.R;
-import cu.uno.utiles.bsimagepicker.BSImagePicker;
 
 public class Principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -87,7 +86,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         addPublicacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(context, AddPublicacion.class));
+                startActivity(new Intent(context, AddProducto.class));
                 floatingActionMenu.close(true);
 
             }

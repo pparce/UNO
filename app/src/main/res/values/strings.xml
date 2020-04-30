@@ -15,8 +15,8 @@
 
     <string name="fab_producto">Nuevo Producto</string>
     <string name="fab_publicacion">Publicación</string>
-    <string name="fab_servicio">Servicio</string>
-    <string name="fab_solicitud">Solicitud</string>
+    <string name="fab_servicio">Nuevo Servicio</string>
+    <string name="fab_solicitud">Hacer Solicitud</string>
 
     <string name="nav_principal">Principal</string>
     <string name="nav_negocios">Negocios</string>
@@ -24,11 +24,14 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
 
-    <string name="action_search">Buscar</string>
+    <string name="action_buscar">Buscar</string>
     <string name="action_compartir">Compartir</string>
     <string name="action_add_favorite">Agrgar a Favoritos</string>
     <string name="action_report">Reportar</string>
     <string name="action_aceptar">Aceptar</string>
+    <string name="action_informacion">Información</string>
+    <string name="action_home">Ir a Inicio</string>
+    <string name="action_filtro">Filtro</string>
 
     <string name="navigation_drawer_inicio">Principal</string>
     <string name="navigation_drawer_negocio">Negocios</string>
@@ -171,15 +174,15 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_favoritos">Favoritos</string>
-    <string name="title_activity_add_publicacion">Nueva Publicación</string>
+    <string name="title_activity_add_producto">Nuevo Producto</string>
     <string name="title_activity_add_solicitud">Nueva Solicitud</string>
 
-    <string name="imagepicker_multiselect_done">Done</string>
-    <string name="imagepicker_multiselect_not_enough_singular">You have to select 1 more image</string>
-    <string name="imagepicker_multiselect_not_enough_plural">You have to select %d more images</string>
-    <string name="imagepicker_multiselect_enough_singular">You have selected 1 image</string>
-    <string name="imagepicker_multiselect_enough_plural">You have selected %d images</string>
-    <string name="imagepicker_multiselect_overselect">You cannot select more than %d images</string>
-    <string name="imagepicker_gallery_intent_title">Select Multiple Images</string>
-    <string name="imagepicker_no_image_text_view">There are no image in your device.</string>
+    <string name="imagepicker_multiselect_done">Aceptar</string>
+    <string name="imagepicker_multiselect_not_enough_singular">Tienes que seleccionar 1 imagen</string>
+    <string name="imagepicker_multiselect_not_enough_plural">Tienes que seleccionar %d imagen más</string>
+    <string name="imagepicker_multiselect_enough_singular">Tienes seleccionada 1 image</string>
+    <string name="imagepicker_multiselect_enough_plural">Tienes seleccionada %d imagenes</string>
+    <string name="imagepicker_multiselect_overselect">No puedes selecionar más de %d images</string>
+    <string name="imagepicker_gallery_intent_title">Selecciona varias imagenes</string>
+    <string name="imagepicker_no_image_text_view">No hay imagenes en tu dispositivo</string>
 </resources>

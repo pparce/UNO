@@ -130,6 +130,7 @@ public class ImageTileAdapter extends RecyclerView.Adapter<ImageTileAdapter.Base
             }
         } else {
             if (position == 0) return VIEWTYPE_CAMERA;
+            if (position == 1) return VIEWTYPE_GALLERY;
             if (position == getItemCount() - 1) return VIEWTYPE_BOTTOM_SPACE;
             return imageList == null ? VIEWTYPE_DUMMY : VIEWTYPE_IMAGE;
         }

@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,8 +16,6 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import cu.uno.R;
-import cu.uno.activitys.AddPublicacion;
-import cu.uno.modelos.ModeloCategoria;
 
 /**
  * Created by Suleiman on 26-07-2015.

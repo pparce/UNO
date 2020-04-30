@@ -1,6 +1,7 @@
 package cu.uno.activitys;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,6 +55,12 @@ public class VistaProducto extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.vista_producto, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override

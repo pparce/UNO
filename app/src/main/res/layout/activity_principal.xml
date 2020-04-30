@@ -60,17 +60,27 @@
             android:id="@+id/menu_publicacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_add_blanco"
+            android:src="@drawable/ic_product"
             fab:fab_size="mini"
             fab:fab_colorNormal="@color/colorAccent"
             fab:fab_colorPressed="@color/colorAccent"
-            fab:fab_label="@string/fab_publicacion" />
+            fab:fab_label="@string/fab_producto" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_servicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_servicio"
+            fab:fab_size="mini"
+            fab:fab_colorNormal="@color/colorAccent"
+            fab:fab_colorPressed="@color/colorAccent"
+            fab:fab_label="@string/fab_servicio" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_solicitud"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_add_blanco"
+            android:src="@drawable/ic_solicitud"
             fab:fab_size="mini"
             fab:fab_colorNormal="@color/colorAccent"
             fab:fab_colorPressed="@color/colorAccent"

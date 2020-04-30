@@ -3,10 +3,11 @@ package cu.uno.activitys;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.Spinner;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,9 +23,10 @@ import java.util.List;
 
 import cu.uno.R;
 import cu.uno.adapters.AdapterAddImagenes;
+import cu.uno.utiles.Util;
 import cu.uno.utiles.bsimagepicker.BSImagePicker;
 
-public class AddPublicacion extends AppCompatActivity implements BSImagePicker.OnSingleImageSelectedListener,
+public class AddProducto extends AppCompatActivity implements BSImagePicker.OnSingleImageSelectedListener,
         BSImagePicker.OnMultiImageSelectedListener, BSImagePicker.ImageLoaderDelegate, BSImagePicker.OnSelectImageCancelledListener {
 
     List<Uri> listaImagenes;
@@ -35,7 +37,7 @@ public class AddPublicacion extends AppCompatActivity implements BSImagePicker.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_publicacion);
+        setContentView(R.layout.activity_add_producto);
         initView();
     }
 
@@ -55,7 +57,6 @@ public class AddPublicacion extends AppCompatActivity implements BSImagePicker.O
                             .setMinimumMultiSelectCount(1)
                             .setMaximumMultiSelectCount(5 - listaImagenes.size())
                             .useFrontCamera()
-                            .hideGalleryTile()
                             .build();
                     pickerDialog.show(getSupportFragmentManager(), "picker");
                 } else {
@@ -67,10 +68,10 @@ public class AddPublicacion extends AppCompatActivity implements BSImagePicker.O
 
     private void initRecycler() {
 
-        layoutManager = new LinearLayoutManager(AddPublicacion.this, LinearLayoutManager.HORIZONTAL, false);
+        layoutManager = new LinearLayoutManager(AddProducto.this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new AdapterAddImagenes(AddPublicacion.this, listaImagenes);
+        adapter = new AdapterAddImagenes(AddProducto.this, listaImagenes);
         recyclerView.setAdapter(adapter);
         adapter.setOnLongClickListener(new View.OnLongClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
@@ -97,6 +98,16 @@ public class AddPublicacion extends AppCompatActivity implements BSImagePicker.O
         validarLista();
     }
 
+    /*private void initSpinner() {
+        Spinner spinner = findViewById(R.id.spinner);
+        String[] tiposPublicacion = {
+                "Producto",
+                "Evento",
+                "servicio"
+        };
+    }*/
+
+
     private void validarLista() {
         if (listaImagenes.size() != 0) {
             recyclerView.setVisibility(View.VISIBLE);
@@ -106,13 +117,24 @@ public class AddPublicacion extends AppCompatActivity implements BSImagePicker.O
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.add_producto, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == android.R.id.home) {
             onBackPressed();
+        } else if (id == R.id.action_info) {
+            Util.showDialogSimple(AddProducto.this,
+                    "Producto", "Esta es una descripcion para simular la explicacion de la ventana de Producto");
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 
     @Override
     public void onSingleImageSelected(Uri uri, String tag) {
@@ -133,11 +155,10 @@ public class AddPublicacion extends AppCompatActivity implements BSImagePicker.O
 
     @Override
     public void loadImage(Uri imageUri, ImageView ivImage) {
-        Glide.with(AddPublicacion.this).load(imageUri).into(ivImage);
+        Glide.with(AddProducto.this).load(imageUri).into(ivImage);
     }
 
     @Override
     public void onCancelled(boolean isMultiSelecting, String tag) {
-
     }
 }

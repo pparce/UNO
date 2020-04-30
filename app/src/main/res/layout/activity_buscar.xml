@@ -17,7 +17,33 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            app:title=""
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:contentInsetStartWithNavigation="0dp"
+            app:contentInsetEndWithActions="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="15dp">
+
+                <SearchView
+                    android:background="@drawable/boton_cajon_buscar"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:id="@+id/searchView"
+                    android:queryHint="Buscar.."
+                    android:theme="@style/SearchView"
+                    android:iconifiedByDefault="false"
+                    android:submitBackground="@android:color/transparent"
+                    android:queryBackground="@android:color/transparent" />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 

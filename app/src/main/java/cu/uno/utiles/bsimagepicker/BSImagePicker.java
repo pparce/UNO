@@ -88,15 +88,21 @@ public class BSImagePicker extends BottomSheetDialogFragment implements LoaderMa
     public interface OnSingleImageSelectedListener {
         void onSingleImageSelected(Uri uri, String tag);
     }
+
     private OnSingleImageSelectedListener onSingleImageSelectedListener;
+
     public interface OnMultiImageSelectedListener {
         void onMultiImageSelected(List<Uri> uriList, String tag);
     }
+
     private OnMultiImageSelectedListener onMultiImageSelectedListener;
+
     public interface ImageLoaderDelegate {
         void loadImage(Uri imageUri, ImageView ivImage);
     }
+
     private OnSelectImageCancelledListener onSelectImageCancelledListener;
+
     public interface OnSelectImageCancelledListener {
         void onCancelled(boolean isMultiSelecting, String tag);
     }
@@ -357,7 +363,7 @@ public class BSImagePicker extends BottomSheetDialogFragment implements LoaderMa
             while (cursor.moveToNext() && index < maximumDisplayingImages) {
                 int id = cursor.getInt(cursor.getColumnIndex(MediaStore.Images.Media._ID));
                 Uri baseUri = Uri.parse("content://media/external/images/media");
-                uriList.add(Uri.withAppendedPath(baseUri, ""+id));
+                uriList.add(Uri.withAppendedPath(baseUri, "" + id));
                 index++;
             }
             cursor.moveToPosition(-1); //Restore cursor back to the beginning
@@ -449,10 +455,10 @@ public class BSImagePicker extends BottomSheetDialogFragment implements LoaderMa
             adapter.setGalleryTileOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (!isMultiSelection) {
-                        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                        startActivityForResult(intent, REQUEST_SELECT_FROM_GALLERY);
-                    }
+
+                    Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    startActivityForResult(intent, REQUEST_SELECT_FROM_GALLERY);
+
                 }
             });
             adapter.setImageTileOnClickListener(new View.OnClickListener() {
@@ -594,7 +600,7 @@ public class BSImagePicker extends BottomSheetDialogFragment implements LoaderMa
      * Returns the TextView that appears when there is no item,
      * So that user can customize its styles, etc.
      */
-    public TextView getEmptyTextView () {
+    public TextView getEmptyTextView() {
         return tvEmptyView;
     }
 
@@ -637,7 +643,7 @@ public class BSImagePicker extends BottomSheetDialogFragment implements LoaderMa
             return this;
         }
 
-        public Builder setMaximumDisplayingImages (int maximumDisplayingImages) {
+        public Builder setMaximumDisplayingImages(int maximumDisplayingImages) {
 
             this.maximumDisplayingImages = maximumDisplayingImages;
             return this;

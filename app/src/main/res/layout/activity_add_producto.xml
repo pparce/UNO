@@ -22,7 +22,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_add_publicacion" />
+    <include layout="@layout/content_add_producto" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
