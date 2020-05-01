@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import cu.uno.R;
-import cu.uno.activitys.VistaNegocio;
-import cu.uno.activitys.VistaProducto;
+import cu.uno.activitys.ActivityVistaNegocio;
+import cu.uno.activitys.ActivityVistaProducto;
 import cu.uno.adapters.AdapterPrincipalInicio;
 import cu.uno.modelos.ModeloNotas;
 import cu.uno.utiles.SpacesItemDecorationEventos;
@@ -79,9 +79,9 @@ public class FragmentPrincipalInicio extends Fragment {
             public void onClick(View view) {
 
                 if (view.getClass() == CardView.class) {
-                    startActivity(new Intent(context, VistaProducto.class));
+                    startActivity(new Intent(context, ActivityVistaProducto.class));
                 } else {
-                    startActivity(new Intent(context, VistaNegocio.class));
+                    startActivity(new Intent(context, ActivityVistaNegocio.class));
                 }
             }
         });

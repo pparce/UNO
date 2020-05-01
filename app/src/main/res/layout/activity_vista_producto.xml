@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="@color/blanco"
-    tools:context=".activitys.VistaProducto">
+    tools:context=".activitys.ActivityVistaProducto">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"

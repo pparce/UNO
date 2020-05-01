@@ -20,7 +20,7 @@ import java.util.List;
 
 import cu.uno.R;
 
-public class Categorias extends AppCompatActivity {
+public class ActivityCategorias extends AppCompatActivity {
     Menu menu;
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -42,10 +42,10 @@ public class Categorias extends AppCompatActivity {
 
         listaSeleccionadas = new ArrayList<>();
 
-        layoutManager = new LinearLayoutManager(Categorias.this);
+        layoutManager = new LinearLayoutManager(ActivityCategorias.this);
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(layoutManager);
-        adapterCategorias = new AdapterCategorias(Categorias.this, getListaCategorias());
+        adapterCategorias = new AdapterCategorias(ActivityCategorias.this, getListaCategorias());
         recyclerView.setAdapter(adapterCategorias);
         adapterCategorias.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,7 +109,7 @@ public class Categorias extends AppCompatActivity {
         if (id == android.R.id.home) {
             onBackPressed();
         } else if (id == R.id.action_done) {
-            startActivity(new Intent(Categorias.this, Principal.class));
+            startActivity(new Intent(ActivityCategorias.this, ActivityPrincipal.class));
             finish();
         }
         return super.onOptionsItemSelected(item);

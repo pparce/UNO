@@ -8,7 +8,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import cu.uno.R;
 
-public class AddSolicitud extends AppCompatActivity {
+public class ActivityAddSolicitud extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

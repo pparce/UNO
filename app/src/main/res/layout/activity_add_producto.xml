@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".activitys.Favoritos">
+    tools:context=".activitys.ActivityFavoritos">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -24,5 +24,16 @@
 
     <include layout="@layout/content_add_producto" />
 
+    <cu.uno.utiles.MovableButton
+        android:id="@+id/add_imagen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:backgroundTint="@color/colorAccent"
+        android:text="@string/campo_publicar"
+        android:textColor="@color/colorPrimary"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

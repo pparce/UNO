@@ -9,7 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import cu.uno.R;
 
 
-public class VistaNegocio extends AppCompatActivity {
+public class ActivityVistaNegocio extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -2,21 +2,19 @@ package cu.uno.ui.inicio;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
 import cu.uno.R;
-import cu.uno.activitys.Principal;
+import cu.uno.activitys.ActivityPrincipal;
 import cu.uno.adapters.ViewPagerPrincipal;
 
 public class InicioFragment extends Fragment {
@@ -35,7 +33,10 @@ public class InicioFragment extends Fragment {
     }
 
     private void initView() {
-        tab = Principal.tab;
+        tab = view.findViewById(R.id.tab);
+        tab.addTab(tab.newTab().setText("Pincipal"));
+        tab.addTab(tab.newTab().setText("Siguiendo"));
+        tab.addTab(tab.newTab().setText("Destacado"));
         pager = view.findViewById(R.id.viewpager);
         pagerAdaptor = new ViewPagerPrincipal(context, getFragmentManager(), tab.getTabCount());
         pager.setAdapter(pagerAdaptor);

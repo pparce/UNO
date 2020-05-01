@@ -13,7 +13,6 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
 import cu.uno.R;
-import cu.uno.activitys.Principal;
 import cu.uno.adapters.ViewPagerPrincipal;
 
 public class NegociosFragment extends Fragment {

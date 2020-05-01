@@ -23,7 +23,7 @@ import android.widget.TextView;
 import cu.uno.R;
 import cu.uno.utiles.PrefManager;
 
-public class Slider extends AppCompatActivity {
+public class ActivitySlider extends AppCompatActivity {
 
     private ViewPager viewPager;
     private MyViewPagerAdapter myViewPagerAdapter;
@@ -105,9 +105,9 @@ public class Slider extends AppCompatActivity {
             @Override
             public void run() {
                 if (prefManager.isLogin()) {
-                    startActivity(new Intent(Slider.this, Principal.class));
+                    startActivity(new Intent(ActivitySlider.this, ActivityPrincipal.class));
                 } else {
-                    startActivity(new Intent(Slider.this, Login.class));
+                    startActivity(new Intent(ActivitySlider.this, ActivityLogin.class));
                 }
                 finish();
             }
@@ -139,7 +139,7 @@ public class Slider extends AppCompatActivity {
 
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(Slider.this, Login.class));
+        startActivity(new Intent(ActivitySlider.this, ActivityLogin.class));
         finish();
     }
 

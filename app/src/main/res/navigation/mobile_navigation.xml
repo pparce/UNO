@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_siguiendo" />
     <activity
         android:id="@+id/nav_favoritos"
-        android:name="cu.uno.activitys.Favoritos"
+        android:name="cu.uno.activitys.ActivityFavoritos"
         android:label="activity_favoritos"
         tools:layout="@layout/activity_favoritos" />
 

@@ -8,8 +8,9 @@ import android.view.View;
 import android.widget.Button;
 
 import cu.uno.R;
+import cu.uno.utiles.PrefManager;
 
-public class Login extends AppCompatActivity implements View.OnClickListener {
+public class ActivityLogin extends AppCompatActivity implements View.OnClickListener {
 
     Button entrar, masTarde;
 
@@ -32,11 +33,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.entrar:
-                startActivity(new Intent(Login.this, Principal.class));
+                startActivity(new Intent(ActivityLogin.this, ActivityPrincipal.class));
+                PrefManager prefManager = new PrefManager(ActivityLogin.this);
+                prefManager.setIsLogin(true);
                 finish();
                 break;
             case R.id.mas_tarde:
-                startActivity(new Intent(Login.this, Categorias.class));
+                startActivity(new Intent(ActivityLogin.this, ActivityCategorias.class));
                 break;
         }
     }

@@ -19,35 +19,35 @@
         android:theme="@style/AppTheme"
         tools:ignore="LockedOrientationActivity">
         <activity
-            android:name=".activitys.Favoritos"
+            android:name=".activitys.ActivityFavoritos"
             android:label="@string/title_activity_favoritos"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".activitys.AddProducto"
+            android:name=".activitys.ActivityAddProducto"
             android:label="@string/title_activity_add_producto"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".activitys.AddSolicitud"
+            android:name=".activitys.ActivityAddSolicitud"
             android:label="@string/title_activity_add_solicitud"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".activitys.Buscar"
+            android:name=".activitys.ActivityBuscar"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activitys.Categorias"
+            android:name=".activitys.ActivityCategorias"
             android:label="@string/title_activity_categorias"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activitys.Login"
+            android:name=".activitys.ActivityLogin"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activitys.Slider"
+            android:name=".activitys.ActivitySlider"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -57,22 +57,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activitys.Principal"
+            android:name=".activitys.ActivityPrincipal"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activitys.VistaProducto"
+            android:name=".activitys.ActivityVistaProducto"
             android:label="@string/title_activity_scrolling"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activitys.VistaNegocio"
+            android:name=".activitys.ActivityVistaNegocio"
             android:label="@string/title_activity_scrolling"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activitys.ScrollingActivity"
+            android:name=".activitys.ActivityScrollingActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar" />
         <provider

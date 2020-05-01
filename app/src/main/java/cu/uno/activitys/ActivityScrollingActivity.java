@@ -9,7 +9,7 @@ import android.view.View;
 
 import cu.uno.R;
 
-public class ScrollingActivity extends AppCompatActivity {
+public class ActivityScrollingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

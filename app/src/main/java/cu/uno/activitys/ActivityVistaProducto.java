@@ -13,7 +13,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import cu.uno.R;
 
-public class VistaProducto extends AppCompatActivity {
+public class ActivityVistaProducto extends AppCompatActivity {
 
     TabLayout tab;
     ViewPager pager;

@@ -10,8 +10,10 @@
     <string name="categoria_info">Selecciona al menos tres categorias</string>
 
     <string name="campo_titulo">Título</string>
+    <string name="campo_precio">Precio</string>
     <string name="campo_descripcion">Descripción</string>
     <string name="campo_agregar_foto">Agregar Imagen</string>
+    <string name="campo_publicar">Publicar</string>
 
     <string name="fab_producto">Nuevo Producto</string>
     <string name="fab_publicacion">Publicación</string>
@@ -30,6 +32,7 @@
     <string name="action_report">Reportar</string>
     <string name="action_aceptar">Aceptar</string>
     <string name="action_informacion">Información</string>
+    <string name="action_add_foto">Agregar Fotos</string>
     <string name="action_home">Ir a Inicio</string>
     <string name="action_filtro">Filtro</string>
 

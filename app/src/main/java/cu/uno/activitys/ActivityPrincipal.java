@@ -2,6 +2,7 @@ package cu.uno.activitys;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.Menu;
@@ -9,10 +10,12 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import com.github.clans.fab.FloatingActionMenu;
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,11 +30,12 @@ import java.util.TimerTask;
 
 import cu.uno.R;
 
-public class Principal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class ActivityPrincipal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     public static TabLayout tab;
     private AppBarConfiguration mAppBarConfiguration;
-    Context context = Principal.this;
+    AppBarLayout appBarLayout;
+    Context context = ActivityPrincipal.this;
     DrawerLayout drawer;
     int atras = 0;
 
@@ -48,12 +52,8 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        tab = findViewById(R.id.tab);
-        tab.addTab(tab.newTab().setText("Pincipal"));
-        tab.addTab(tab.newTab().setText("Siguiendo"));
-        tab.addTab(tab.newTab().setText("Destacado"));
-
-
+//        tab = findViewById(R.id.tab);
+        appBarLayout = findViewById(R.id.app_bar);
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -67,13 +67,15 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
                 int id = destination.getId();
                 if (id == R.id.nav_inicio) {
-                    tab.setVisibility(View.VISIBLE);
+                    appBarLayout.setElevation(0);
+//                    tab.setVisibility(View.VISIBLE);
                 } else if (id == R.id.nav_negocio) {
-                    tab.setVisibility(View.GONE);
+                    appBarLayout.setElevation(10);
                 }
             }
         });
@@ -86,7 +88,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         addPublicacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(context, AddProducto.class));
+                startActivity(new Intent(context, ActivityAddProducto.class));
                 floatingActionMenu.close(true);
 
             }
@@ -95,7 +97,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
         addSolicitud.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(context, AddSolicitud.class));
+                startActivity(new Intent(context, ActivityAddSolicitud.class));
                 floatingActionMenu.close(true);
             }
         });
@@ -113,7 +115,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
 
         int id = item.getItemId();
         if (id == R.id.action_buscar) {
-            startActivity(new Intent(Principal.this, Buscar.class));
+            startActivity(new Intent(ActivityPrincipal.this, ActivityBuscar.class));
         }
         return super.onOptionsItemSelected(item);
     }
@@ -129,7 +131,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
             }
             if (atras == 0) {
                 atras = 1;
-                Toast.makeText(Principal.this, "Presione una vez mas para cerrar ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityPrincipal.this, "Presione una vez mas para cerrar ", Toast.LENGTH_SHORT).show();
 
                 TimerTask timerTask = new TimerTask() {
                     @Override
@@ -155,7 +157,7 @@ public class Principal extends AppCompatActivity implements NavigationView.OnNav
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
         if (id == R.id.nav_favoritos) {
-            startActivity(new Intent(context, Favoritos.class));
+            startActivity(new Intent(context, ActivityFavoritos.class));
         }
         Toast.makeText(context, "click", Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);

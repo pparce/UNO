@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Spinner;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +25,7 @@ import cu.uno.adapters.AdapterAddImagenes;
 import cu.uno.utiles.Util;
 import cu.uno.utiles.bsimagepicker.BSImagePicker;
 
-public class AddProducto extends AppCompatActivity implements BSImagePicker.OnSingleImageSelectedListener,
+public class ActivityAddProducto extends AppCompatActivity implements BSImagePicker.OnSingleImageSelectedListener,
         BSImagePicker.OnMultiImageSelectedListener, BSImagePicker.ImageLoaderDelegate, BSImagePicker.OnSelectImageCancelledListener {
 
     List<Uri> listaImagenes;
@@ -50,28 +49,17 @@ public class AddProducto extends AppCompatActivity implements BSImagePicker.OnSi
         findViewById(R.id.add_imagen).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (listaImagenes.size() < 5) {
-                    BSImagePicker pickerDialog = new BSImagePicker.Builder("com.asksira.imagepickersheetdemo.fileprovider")
-                            .setMaximumDisplayingImages(Integer.MAX_VALUE)
-                            .isMultiSelect()
-                            .setMinimumMultiSelectCount(1)
-                            .setMaximumMultiSelectCount(5 - listaImagenes.size())
-                            .useFrontCamera()
-                            .build();
-                    pickerDialog.show(getSupportFragmentManager(), "picker");
-                } else {
-                    Snackbar.make(v, "solo puede agregar 5 imagenes", Snackbar.LENGTH_SHORT).show();
-                }
+
             }
         });
     }
 
     private void initRecycler() {
 
-        layoutManager = new LinearLayoutManager(AddProducto.this, LinearLayoutManager.HORIZONTAL, false);
+        layoutManager = new LinearLayoutManager(ActivityAddProducto.this, LinearLayoutManager.HORIZONTAL, false);
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(layoutManager);
-        adapter = new AdapterAddImagenes(AddProducto.this, listaImagenes);
+        adapter = new AdapterAddImagenes(ActivityAddProducto.this, listaImagenes);
         recyclerView.setAdapter(adapter);
         adapter.setOnLongClickListener(new View.OnLongClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
@@ -128,8 +116,21 @@ public class AddProducto extends AppCompatActivity implements BSImagePicker.OnSi
         if (id == android.R.id.home) {
             onBackPressed();
         } else if (id == R.id.action_info) {
-            Util.showDialogSimple(AddProducto.this,
+            Util.showDialogSimple(ActivityAddProducto.this,
                     "Producto", "Esta es una descripcion para simular la explicacion de la ventana de Producto");
+        } else if (id == R.id.action_add_foto) {
+            if (listaImagenes.size() < 5) {
+                BSImagePicker pickerDialog = new BSImagePicker.Builder("com.asksira.imagepickersheetdemo.fileprovider")
+                        .setMaximumDisplayingImages(Integer.MAX_VALUE)
+                        .isMultiSelect()
+                        .setMinimumMultiSelectCount(1)
+                        .setMaximumMultiSelectCount(5 - listaImagenes.size())
+                        .useFrontCamera()
+                        .build();
+                pickerDialog.show(getSupportFragmentManager(), "picker");
+            } else {
+                Snackbar.make(item.getActionView(), "solo puede agregar 5 imagenes", Snackbar.LENGTH_SHORT).show();
+            }
         }
         return super.onOptionsItemSelected(item);
     }
@@ -155,7 +156,7 @@ public class AddProducto extends AppCompatActivity implements BSImagePicker.OnSi
 
     @Override
     public void loadImage(Uri imageUri, ImageView ivImage) {
-        Glide.with(AddProducto.this).load(imageUri).into(ivImage);
+        Glide.with(ActivityAddProducto.this).load(imageUri).into(ivImage);
     }
 
     @Override
