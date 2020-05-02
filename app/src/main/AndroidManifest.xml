@@ -63,7 +63,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activitys.ActivityVistaProducto"
-            android:label="@string/title_activity_scrolling"
+            android:label="celulares de la marca Xiaomi redmi note 8"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

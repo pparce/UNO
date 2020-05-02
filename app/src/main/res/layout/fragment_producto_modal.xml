@@ -6,33 +6,53 @@
     android:layout_height="wrap_content"
     android:background="#ffffff"
     android:orientation="vertical"
-    android:padding="16dp"
     android:fitsSystemWindows="true"
     app:behavior_hideable="false"
+    android:paddingBottom="16dp"
     app:behavior_peekHeight="90dp">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/action_agregar_favorito"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:drawableLeft="@drawable/ic_account_circle"
+        android:padding="16dp"
+        android:clickable="true"
+        android:background="?attr/selectableItemBackground"
+        android:drawableLeft="@drawable/ic_favorite"
         android:drawablePadding="16dp"
-        android:text="740 Valencia St, San Fracisco, CA" />
+        android:text="@string/action_agregar_favorito" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/action_descargar_imagen"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:drawableLeft="@drawable/ic_account_circle"
+        android:padding="16dp"
+        android:clickable="true"
+        android:background="?attr/selectableItemBackground"
+        android:drawableLeft="@drawable/ic_descargar"
         android:drawablePadding="16dp"
-        android:text="(415) 349-0942" />
+        android:text="@string/action_descargar_imagen" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/action_quitar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:drawableLeft="@drawable/ic_account_circle"
+        android:padding="16dp"
+        android:clickable="true"
+        android:background="?attr/selectableItemBackground"
+        android:drawableLeft="@drawable/ic_quitar"
         android:drawablePadding="16dp"
-        android:text="Wed, 10 AM - 9 PM" />
+        android:text="@string/action_quitar" />
+
+    <TextView
+        android:id="@+id/action_detalles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:clickable="true"
+        android:background="?attr/selectableItemBackground"
+        android:drawableLeft="@drawable/ic_informacion_relleno"
+        android:drawablePadding="16dp"
+        android:text="@string/action_detalles" />
 
 </LinearLayout>

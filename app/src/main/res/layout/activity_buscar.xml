@@ -32,16 +32,17 @@
                 android:layout_height="wrap_content"
                 android:paddingRight="15dp">
 
-                <SearchView
+                <androidx.appcompat.widget.SearchView
                     android:background="@drawable/boton_cajon_buscar"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:id="@+id/searchView"
-                    android:queryHint="Buscar.."
-                    android:theme="@style/SearchView"
-                    android:iconifiedByDefault="false"
                     android:submitBackground="@android:color/transparent"
-                    android:queryBackground="@android:color/transparent" />
+                    android:queryBackground="@android:color/transparent"
+                    app:queryHint="Buscar.."
+                    app:theme="@style/SearchView"
+                    app:searchIcon="@null"
+                    app:iconifiedByDefault="false" />
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
 

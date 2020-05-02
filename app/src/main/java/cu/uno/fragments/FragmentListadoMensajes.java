@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import cu.uno.R;
 
 
-public class FragmentProductoMensajes extends Fragment {
+public class FragmentListadoMensajes extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -28,7 +28,7 @@ public class FragmentProductoMensajes extends Fragment {
     private String mParam2;
 
 
-    public FragmentProductoMensajes() {
+    public FragmentListadoMensajes() {
         // Required empty public constructor
     }
 
@@ -42,7 +42,7 @@ public class FragmentProductoMensajes extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_principal_inicio, container, false);
+        view = inflater.inflate(R.layout.fragment_listado_mosaico, container, false);
 
         Inicializar();
         return view;

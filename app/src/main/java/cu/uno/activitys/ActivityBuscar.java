@@ -1,15 +1,23 @@
 package cu.uno.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextClock;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import cu.uno.R;
 
 public class ActivityBuscar extends AppCompatActivity {
+    SearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +31,10 @@ public class ActivityBuscar extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        searchView = findViewById(R.id.searchView);
+        searchView.setIconified(false);
+        searchView.onActionViewExpanded();
+
     }
 
     @Override

@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,7 +17,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import cu.uno.R;
 import cu.uno.activitys.ActivityVistaNegocio;
 import cu.uno.activitys.ActivityVistaProducto;
-import cu.uno.adapters.AdapterPrincipalInicio;
+import cu.uno.adapters.AdapterListadoMosaico;
 import cu.uno.modelos.ModeloNotas;
 import cu.uno.utiles.SpacesItemDecorationEventos;
 
@@ -23,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class FragmentPrincipalInicio extends Fragment {
+public class FragmentListadoMosaico extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -33,7 +35,8 @@ public class FragmentPrincipalInicio extends Fragment {
     Context context;
     RecyclerView recycler;
     RecyclerView.LayoutManager layoutManager;
-    AdapterPrincipalInicio adapter;
+    AdapterListadoMosaico adapter;
+    SearchView searchView;
     boolean ENCABEZADO =false;
 
     // TODO: Rename and change types of parameters
@@ -41,7 +44,7 @@ public class FragmentPrincipalInicio extends Fragment {
     private String mParam2;
 
 
-    public FragmentPrincipalInicio() {
+    public FragmentListadoMosaico() {
         // Required empty public constructor
     }
 
@@ -55,7 +58,7 @@ public class FragmentPrincipalInicio extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_principal_inicio, container, false);
+        view = inflater.inflate(R.layout.fragment_listado_mosaico, container, false);
         initView();
         return view;
     }
@@ -66,11 +69,11 @@ public class FragmentPrincipalInicio extends Fragment {
         if (bundle != null) {
             ENCABEZADO = bundle.getBoolean("ENCABEZADO");
         }
-
-        recycler = (RecyclerView) view.findViewById(R.id.recyclerview);
+//
+        recycler = view.findViewById(R.id.recyclerview);
         layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-        adapter = new AdapterPrincipalInicio(context, getListaNotas(), ENCABEZADO);
-        SpacesItemDecorationEventos itemDecorationEventos = new SpacesItemDecorationEventos(25, 25);
+        adapter = new AdapterListadoMosaico(context, getListaNotas(), false);
+        SpacesItemDecorationEventos itemDecorationEventos = new SpacesItemDecorationEventos(15, 15);
         recycler.addItemDecoration(itemDecorationEventos);
         recycler.setLayoutManager(layoutManager);
         recycler.setAdapter(adapter);
@@ -89,9 +92,26 @@ public class FragmentPrincipalInicio extends Fragment {
 
         adapter.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public boolean onLongClick(View view) {
-                FragmentModalProducto modalProducto = new FragmentModalProducto();
+            public boolean onLongClick(final View view) {
+                final FragmentModalProducto modalProducto = new FragmentModalProducto();
                 modalProducto.show(getActivity().getSupportFragmentManager(), modalProducto.getTag());
+                modalProducto.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int id = v.getId();
+                        if (id == R.id.action_agregar_favorito) {
+                            Toast.makeText(context, "Agregar a favoritos", Toast.LENGTH_SHORT).show();
+                        } else if (id == R.id.action_descargar_imagen) {
+                            Toast.makeText(context, "Descargar como imagen", Toast.LENGTH_SHORT).show();
+                        } else if (id == R.id.action_quitar) {
+                            Toast.makeText(context, "No quiero ver esto", Toast.LENGTH_SHORT).show();
+                        } else if (id == R.id.action_detalles) {
+                            Toast.makeText(context, "Detalles", Toast.LENGTH_SHORT).show();
+                        }
+                        modalProducto.dismiss();
+
+                    }
+                });
 
                 return false;
             }

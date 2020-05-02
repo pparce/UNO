@@ -1,14 +1,14 @@
 package cu.uno.adapters;
 
 import android.content.Context;
-import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import cu.uno.fragments.FragmentPrincipalInicio;
-import cu.uno.fragments.FragmentProductoMensajes;
+import cu.uno.fragments.FragmentListadoMosaico;
+import cu.uno.fragments.FragmentListadoMensajes;
+import cu.uno.fragments.FragmentProductoInformacion;
 
 
 public class ViewPagerProducto extends FragmentStatePagerAdapter {
@@ -29,13 +29,13 @@ public class ViewPagerProducto extends FragmentStatePagerAdapter {
 
         switch (position) {
             case 0:
-                Bundle bundle = new Bundle();
-                bundle.putBoolean("ENCABEZADO", true);
-                fragment = new FragmentPrincipalInicio();
-                fragment.setArguments(bundle);
+                fragment = new FragmentProductoInformacion();
                 break;
             case 1:
-                fragment = new FragmentProductoMensajes();
+                fragment = new FragmentListadoMensajes();
+                break;
+            case 2:
+                fragment = new FragmentListadoMosaico();
                 break;
         }
 

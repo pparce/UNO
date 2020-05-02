@@ -73,7 +73,6 @@ public class ActivityPrincipal extends AppCompatActivity implements NavigationVi
                 int id = destination.getId();
                 if (id == R.id.nav_inicio) {
                     appBarLayout.setElevation(0);
-//                    tab.setVisibility(View.VISIBLE);
                 } else if (id == R.id.nav_negocio) {
                     appBarLayout.setElevation(10);
                 }

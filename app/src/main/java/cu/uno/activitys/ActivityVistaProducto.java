@@ -33,7 +33,8 @@ public class ActivityVistaProducto extends AppCompatActivity {
 
         tab = (TabLayout) findViewById(R.id.tab);
         tab.addTab(tab.newTab().setText(getResources().getString(R.string.tab_producto_informacion)));
-        tab.addTab(tab.newTab().setText(getResources().getString(R.string.tab_producto_mensajes)));
+        tab.addTab(tab.newTab().setText(getResources().getString(R.string.tab_producto_opiniones)));
+        tab.addTab(tab.newTab().setText(getResources().getString(R.string.tab_producto_relacionados)));
 
         pager = (ViewPager) findViewById(R.id.viewpager);
         pagerAdaptor = new ViewPagerProducto(this, getSupportFragmentManager(), tab.getTabCount());

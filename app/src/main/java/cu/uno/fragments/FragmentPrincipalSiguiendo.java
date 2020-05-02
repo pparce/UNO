@@ -53,7 +53,7 @@ public class FragmentPrincipalSiguiendo extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_principal_inicio, container, false);
+        view = inflater.inflate(R.layout.fragment_listado_mosaico, container, false);
 
         initView();
         return view;

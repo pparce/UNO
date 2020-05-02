@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import cu.uno.R;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 
-public class FragmentModalProducto extends BottomSheetDialogFragment {
+public class FragmentModalProducto extends BottomSheetDialogFragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -18,10 +19,7 @@ public class FragmentModalProducto extends BottomSheetDialogFragment {
 
     View view;
     Context context;
-
-
-
-
+    private View.OnClickListener listener;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -47,7 +45,10 @@ public class FragmentModalProducto extends BottomSheetDialogFragment {
         return view;
     }
     private void initView(){
-
+        view.findViewById(R.id.action_agregar_favorito).setOnClickListener(this);
+        view.findViewById(R.id.action_descargar_imagen).setOnClickListener(this);
+        view.findViewById(R.id.action_quitar).setOnClickListener(this);
+        view.findViewById(R.id.action_detalles).setOnClickListener(this);
     }
 
 
@@ -57,6 +58,13 @@ public class FragmentModalProducto extends BottomSheetDialogFragment {
         this.context = context;
     }
 
+    public void setOnClickListener(View.OnClickListener listener) {
+        this.listener = listener;
+    }
 
-
+    @Override
+    public void onClick(View v) {
+        if (listener != null)
+            listener.onClick(v);
+    }
 }

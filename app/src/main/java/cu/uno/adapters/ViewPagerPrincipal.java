@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import cu.uno.fragments.FragmentPrincipalInicio;
+import cu.uno.fragments.FragmentListadoMosaico;
 
 
 public class ViewPagerPrincipal extends FragmentStatePagerAdapter {
@@ -23,7 +23,7 @@ public class ViewPagerPrincipal extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        Fragment fragment = new FragmentPrincipalInicio();
+        Fragment fragment = new FragmentListadoMosaico();
         Bundle bundle = new Bundle();
         bundle.putInt("POSICION", position);
         fragment.setArguments(bundle);

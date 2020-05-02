@@ -20,7 +20,7 @@ import cu.uno.R;
 /**
  * Created by Suleiman on 26-07-2015.
  */
-public class AdapterPrincipalInicio extends RecyclerView.Adapter<AdapterPrincipalInicio.MasonryView> implements View.OnClickListener, View.OnLongClickListener {
+public class AdapterListadoMosaico extends RecyclerView.Adapter<AdapterListadoMosaico.MasonryView> implements View.OnClickListener, View.OnLongClickListener {
 
     private Context context;
     List<ModeloNotas> list;
@@ -33,7 +33,7 @@ public class AdapterPrincipalInicio extends RecyclerView.Adapter<AdapterPrincipa
 
     View layoutView;
 
-    public AdapterPrincipalInicio(Context context, List<ModeloNotas> list, boolean encabezado) {
+    public AdapterListadoMosaico(Context context, List<ModeloNotas> list, boolean encabezado) {
         this.context = context;
         this.list = list;
         ENCABEZADO = encabezado;
