@@ -3,21 +3,27 @@ package cu.uno.activitys;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import cu.uno.adapters.ViewPagerProducto;
+
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
 
 import cu.uno.R;
+import cu.uno.utiles.ScrollFeedbackRecyclerView;
 
-public class ActivityVistaProducto extends AppCompatActivity {
+public class ActivityVistaProducto extends AppCompatActivity implements ScrollFeedbackRecyclerView.Callbacks {
 
     TabLayout tab;
     ViewPager pager;
     ViewPagerProducto pagerAdaptor;
+    private AppBarLayout mAppBarLayout;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +33,8 @@ public class ActivityVistaProducto extends AppCompatActivity {
         initView();
     }
     private void initView(){
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar =findViewById(R.id.toolbar);
+        mAppBarLayout = findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -72,5 +79,17 @@ public class ActivityVistaProducto extends AppCompatActivity {
             onBackPressed();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean isAppBarCollapsed() {
+        final int appBarVisibleHeight = (int) (mAppBarLayout.getY() + mAppBarLayout.getHeight());
+        final int toolbarHeight = toolbar.getHeight();
+        return (appBarVisibleHeight == toolbarHeight);
+    }
+
+    @Override
+    public void setExpanded(boolean expanded) {
+        mAppBarLayout.setExpanded(expanded, true);
     }
 }

@@ -46,7 +46,7 @@ public class FragmentModalProducto extends BottomSheetDialogFragment implements 
     }
     private void initView(){
         view.findViewById(R.id.action_agregar_favorito).setOnClickListener(this);
-        view.findViewById(R.id.action_descargar_imagen).setOnClickListener(this);
+        view.findViewById(R.id.action_compartir).setOnClickListener(this);
         view.findViewById(R.id.action_quitar).setOnClickListener(this);
         view.findViewById(R.id.action_detalles).setOnClickListener(this);
     }

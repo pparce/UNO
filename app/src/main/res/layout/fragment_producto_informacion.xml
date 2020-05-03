@@ -6,225 +6,239 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp">
 
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:cardElevation="0dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_margin="10dp"
+                app:cardElevation="0dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="16dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/avatar_negocio"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:src="@drawable/ic_account_circle" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal"
-                        android:weightSum="2">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="10dp"
-                            android:layout_weight="1"
-                            android:gravity="center_vertical"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="pparce"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="negocio de electronica"
-                                android:maxLines="2"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                android:textSize="12sp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:gravity="center_vertical|right">
-
-                            <Button
-                                android:layout_width="wrap_content"
-                                android:layout_height="37dp"
-                                android:text="@string/campo_seguir"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-
-
-        </androidx.cardview.widget.CardView>
-
-        <View
-            android:id="@+id/divider4"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:cardElevation="0dp">
-
-            <LinearLayout
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:textSize="16sp"
-                    android:text="@string/titulo_descripcion"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:text="Esta es un apublicacion que tengo que poner aqui para simular la informacion del producto. No tomar en cuenta la falta de ortografia porfavor."
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-            </LinearLayout>
-
-
-        </androidx.cardview.widget.CardView>
-
-        <View
-            android:id="@+id/divider3"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:cardElevation="0dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:paddingTop="16dp"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:textSize="16sp"
-                        android:text="@string/titulo_contacto"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:text="@string/campo_titulo"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                    </LinearLayout>
+
+                    <cu.uno.utiles.ReadMoreTextView
+                        android:id="@+id/descripcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:text="@string/large_text"
+                        app:trimLength="100"
+                        app:trimLines="10"
+                        android:justificationMode="inter_word"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <LinearLayout
+                        android:paddingTop="16dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:autoLink="phone"
-                            android:id="@+id/action_agregar_favorito"
+                        <!--<TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingBottom="10dp"
-                            android:paddingRight="16dp"
-                            android:paddingTop="16dp"
-                            android:clickable="true"
-                            android:background="?attr/selectableItemBackground"
-                            android:drawableLeft="@drawable/ic_celular"
-                            android:drawablePadding="16dp"
-                            android:text="+53 5835-88-01" />
+                            android:layout_marginBottom="10dp"
+                            android:textSize="16sp"
+                            android:text="@string/titulo_contacto"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large" />-->
 
-                        <TextView
-                            android:autoLink="phone"
-                            android:id="@+id/action_agregar_favoritod"
+                        <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingBottom="10dp"
-                            android:paddingRight="16dp"
-                            android:paddingTop="16dp"
-                            android:clickable="true"
-                            android:background="?attr/selectableItemBackground"
-                            android:drawableLeft="@drawable/ic_telefono"
-                            android:drawablePadding="16dp"
-                            android:text="+57 833-85-88" />
+                            android:layout_marginBottom="16dp"
+                            app:cardElevation="0dp">
 
-                        <TextView
-                            android:autoLink="email"
-                            android:id="@+id/action_agregar_favoritodd"
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/avatar_negocio"
+                                        android:layout_width="56dp"
+                                        android:layout_height="56dp"
+                                        android:src="@drawable/ic_account_circle" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal"
+                                        android:weightSum="2">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_weight="1"
+                                            android:gravity="center_vertical"
+                                            android:orientation="vertical">
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="pparce"
+                                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                                android:textSize="14sp" />
+
+                                            <TextView
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:text="negocio de electronica"
+                                                android:maxLines="2"
+                                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                                android:textSize="12sp" />
+
+                                        </LinearLayout>
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:gravity="center_vertical|right">
+
+                                            <Button
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="37dp"
+                                                android:text="@string/campo_seguir"
+                                                android:textSize="12sp" />
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+
+                            </LinearLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:paddingBottom="10dp"
-                            android:paddingRight="16dp"
-                            android:paddingTop="16dp"
-                            android:clickable="true"
-                            android:background="?attr/selectableItemBackground"
-                            android:drawableLeft="@drawable/ic_correo"
-                            android:drawablePadding="16dp"
-                            android:text="pparce@nauta.cu" />
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:autoLink="phone"
+                                android:id="@+id/action_agregar_favorito"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="10dp"
+                                android:paddingRight="16dp"
+                                android:paddingTop="16dp"
+                                android:clickable="true"
+                                android:background="?attr/selectableItemBackground"
+                                android:drawableLeft="@drawable/ic_celular"
+                                android:drawablePadding="16dp"
+                                android:text="+53 5835-88-01" />
+
+                            <TextView
+                                android:autoLink="phone"
+                                android:id="@+id/action_agregar_favoritod"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="10dp"
+                                android:paddingRight="16dp"
+                                android:paddingTop="16dp"
+                                android:clickable="true"
+                                android:background="?attr/selectableItemBackground"
+                                android:drawableLeft="@drawable/ic_telefono"
+                                android:drawablePadding="16dp"
+                                android:text="+57 833-85-88" />
+
+                            <TextView
+                                android:autoLink="email"
+                                android:id="@+id/action_agregar_favoritodd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="10dp"
+                                android:paddingRight="16dp"
+                                android:paddingTop="16dp"
+                                android:clickable="true"
+                                android:background="?attr/selectableItemBackground"
+                                android:drawableLeft="@drawable/ic_correo"
+                                android:drawablePadding="16dp"
+                                android:text="pparce@nauta.cu" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
                 </LinearLayout>
 
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
             </LinearLayout>
 
-
-        </androidx.cardview.widget.CardView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-
         </LinearLayout>
-
-    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 
 </RelativeLayout>

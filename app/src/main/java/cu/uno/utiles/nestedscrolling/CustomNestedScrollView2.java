@@ -2,12 +2,14 @@ package cu.uno.utiles.nestedscrolling;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 /**
  * A custom {@link NestedScrollView} that customizes the sample app's
@@ -48,8 +50,9 @@ public class CustomNestedScrollView2 extends NestedScrollView2 {
    * top of its content (i.e. its first item is completely visible).
    */
   private static boolean isRvScrolledToTop(RecyclerView rv) {
-    final LinearLayoutManager lm = (LinearLayoutManager) rv.getLayoutManager();
-    return lm.findFirstVisibleItemPosition() == 0
-            && lm.findViewByPosition(0).getTop() == 0;
+    final StaggeredGridLayoutManager lm = (StaggeredGridLayoutManager) rv.getLayoutManager();
+    int[] posiciones = null;
+//    Log.e("posicion de recyler", lm.findViewByPosition(0).getTop() + "");
+    return lm.findViewByPosition(0).getTop() == 0;
   }
 }

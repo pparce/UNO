@@ -12,6 +12,17 @@
     app:behavior_peekHeight="90dp">
 
     <TextView
+        android:id="@+id/action_compartir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:clickable="true"
+        android:background="?attr/selectableItemBackground"
+        android:drawableLeft="@drawable/ic_compartir"
+        android:drawablePadding="16dp"
+        android:text="@string/action_compartir" />
+
+    <TextView
         android:id="@+id/action_agregar_favorito"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,7 +33,7 @@
         android:drawablePadding="16dp"
         android:text="@string/action_agregar_favorito" />
 
-    <TextView
+    <!--<TextView
         android:id="@+id/action_descargar_imagen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +42,7 @@
         android:background="?attr/selectableItemBackground"
         android:drawableLeft="@drawable/ic_descargar"
         android:drawablePadding="16dp"
-        android:text="@string/action_descargar_imagen" />
+        android:text="@string/action_descargar_imagen" />-->
 
     <TextView
         android:id="@+id/action_quitar"

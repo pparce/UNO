@@ -21,19 +21,22 @@
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
             app:titleEnabled="false"
+            app:expandedTitleTextAppearance="@style/titleTransparent"
             app:contentScrim="?attr/colorPrimary"
             app:expandedTitleMarginBottom="?attr/actionBarSize"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar">
 
-            <androidx.appcompat.widget.Toolbar
+            <cu.uno.utiles.MarqueeToolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_gravity="top"
                 android:layout_marginBottom="48dp"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+            </cu.uno.utiles.MarqueeToolbar>
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tab"

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.MenuItem;
 import android.view.Menu;
 import android.view.View;
@@ -29,8 +30,9 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import cu.uno.R;
+import cu.uno.utiles.ScrollFeedbackRecyclerView;
 
-public class ActivityPrincipal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class ActivityPrincipal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ScrollFeedbackRecyclerView.Callbacks{
 
     public static TabLayout tab;
     private AppBarConfiguration mAppBarConfiguration;
@@ -83,8 +85,7 @@ public class ActivityPrincipal extends AppCompatActivity implements NavigationVi
     private void setupFAB (){
         final FloatingActionMenu floatingActionMenu = findViewById(R.id.menu);
         floatingActionMenu.setClosedOnTouchOutside(true);
-        ImageButton addPublicacion = findViewById(R.id.menu_publicacion);
-        addPublicacion.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.menu_publicacion).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(context, ActivityAddProducto.class));
@@ -92,8 +93,15 @@ public class ActivityPrincipal extends AppCompatActivity implements NavigationVi
 
             }
         });
-        ImageButton addSolicitud = findViewById(R.id.menu_solicitud);
-        addSolicitud.setOnClickListener(new View.OnClickListener() {
+
+        findViewById(R.id.menu_servicio).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        findViewById(R.id.menu_solicitud).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(context, ActivityAddSolicitud.class));
@@ -161,5 +169,15 @@ public class ActivityPrincipal extends AppCompatActivity implements NavigationVi
         Toast.makeText(context, "click", Toast.LENGTH_SHORT).show();
         drawer.closeDrawer(GravityCompat.START);
         return false;
+    }
+
+    @Override
+    public boolean isAppBarCollapsed() {
+        return false;
+    }
+
+    @Override
+    public void setExpanded(boolean expanded) {
+
     }
 }

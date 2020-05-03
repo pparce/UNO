@@ -3,11 +3,13 @@ package cu.uno.fragments;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
@@ -88,8 +90,6 @@ public class FragmentListadoMosaico extends Fragment {
                 }
             }
         });
-
-
         adapter.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(final View view) {
@@ -101,8 +101,8 @@ public class FragmentListadoMosaico extends Fragment {
                         int id = v.getId();
                         if (id == R.id.action_agregar_favorito) {
                             Toast.makeText(context, "Agregar a favoritos", Toast.LENGTH_SHORT).show();
-                        } else if (id == R.id.action_descargar_imagen) {
-                            Toast.makeText(context, "Descargar como imagen", Toast.LENGTH_SHORT).show();
+                        } else if (id == R.id.action_compartir) {
+                            Toast.makeText(context, "Compartir", Toast.LENGTH_SHORT).show();
                         } else if (id == R.id.action_quitar) {
                             Toast.makeText(context, "No quiero ver esto", Toast.LENGTH_SHORT).show();
                         } else if (id == R.id.action_detalles) {
@@ -112,10 +112,10 @@ public class FragmentListadoMosaico extends Fragment {
 
                     }
                 });
-
                 return false;
             }
         });
+
     }
 
     private List<ModeloNotas> getListaNotas() {

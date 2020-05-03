@@ -1,6 +1,7 @@
 package cu.uno.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import androidx.fragment.app.Fragment;
 
 import cu.uno.R;
+import cu.uno.activitys.ActivityVistaNegocio;
 
 
 public class FragmentProductoInformacion extends Fragment {
@@ -54,9 +56,11 @@ public class FragmentProductoInformacion extends Fragment {
         avatarNegocio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               /* startActivity(new Intent(context, VistaNegocio.class));*/
+                startActivity(new Intent(context, ActivityVistaNegocio.class));
             }
         });
+
+
     }
 
 
