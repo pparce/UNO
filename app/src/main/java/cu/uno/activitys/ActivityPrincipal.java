@@ -32,7 +32,7 @@ import java.util.TimerTask;
 import cu.uno.R;
 import cu.uno.utiles.ScrollFeedbackRecyclerView;
 
-public class ActivityPrincipal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, ScrollFeedbackRecyclerView.Callbacks{
+public class ActivityPrincipal extends AppCompatActivity implements ScrollFeedbackRecyclerView.Callbacks{
 
     public static TabLayout tab;
     private AppBarConfiguration mAppBarConfiguration;
@@ -58,7 +58,6 @@ public class ActivityPrincipal extends AppCompatActivity implements NavigationVi
         appBarLayout = findViewById(R.id.app_bar);
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -160,16 +159,6 @@ public class ActivityPrincipal extends AppCompatActivity implements NavigationVi
                 || super.onSupportNavigateUp();
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        int id = menuItem.getItemId();
-        if (id == R.id.nav_favoritos) {
-            startActivity(new Intent(context, ActivityFavoritos.class));
-        }
-        Toast.makeText(context, "click", Toast.LENGTH_SHORT).show();
-        drawer.closeDrawer(GravityCompat.START);
-        return false;
-    }
 
     @Override
     public boolean isAppBarCollapsed() {

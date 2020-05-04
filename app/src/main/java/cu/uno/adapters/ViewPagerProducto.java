@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import cu.uno.fragments.FragmentListadoMosaico;
-import cu.uno.fragments.FragmentListadoMensajes;
+import cu.uno.fragments.FragmentProductoRelacionados;
+import cu.uno.fragments.FragmentListadoOpiniones;
 import cu.uno.fragments.FragmentProductoInformacion;
 
 
@@ -32,10 +32,10 @@ public class ViewPagerProducto extends FragmentStatePagerAdapter {
                 fragment = new FragmentProductoInformacion();
                 break;
             case 1:
-                fragment = new FragmentListadoMensajes();
+                fragment = new FragmentListadoOpiniones();
                 break;
             case 2:
-                fragment = new FragmentListadoMosaico();
+                fragment = new FragmentProductoRelacionados();
                 break;
         }
 

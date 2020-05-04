@@ -24,11 +24,11 @@
                 app:cardElevation="0dp">
 
                 <LinearLayout
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -39,9 +39,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
-                            android:textColor="@color/colorAccent"
                             android:text="@string/campo_titulo"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+                            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                            android:textColor="@color/colorAccent" />
 
                     </LinearLayout>
 
@@ -50,11 +50,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="16dp"
-                        android:text="@string/large_text"
-                        app:trimLength="100"
-                        app:trimLines="10"
                         android:justificationMode="inter_word"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+                        android:text="@string/large_text"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textSize="14sp"
+                        app:trimLength="100"
+                        app:trimLines="10" />
                 </LinearLayout>
 
 
@@ -66,161 +67,151 @@
                 android:layout_height="1dp"
                 android:background="?android:attr/listDivider" />
 
-
-
-
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 app:cardElevation="0dp">
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:paddingTop="16dp"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="16dp"
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <!--<TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:textSize="16sp"
-                            android:text="@string/titulo_contacto"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Large" />-->
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="16dp"
-                            app:cardElevation="0dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:gravity="center_vertical"
-                                    android:orientation="horizontal">
-
-                                    <ImageView
-                                        android:id="@+id/avatar_negocio"
-                                        android:layout_width="56dp"
-                                        android:layout_height="56dp"
-                                        android:src="@drawable/ic_account_circle" />
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:orientation="horizontal"
-                                        android:weightSum="2">
-
-                                        <LinearLayout
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:layout_marginLeft="10dp"
-                                            android:layout_weight="1"
-                                            android:gravity="center_vertical"
-                                            android:orientation="vertical">
-
-                                            <TextView
-                                                android:layout_width="match_parent"
-                                                android:layout_height="wrap_content"
-                                                android:text="pparce"
-                                                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                                                android:textSize="14sp" />
-
-                                            <TextView
-                                                android:layout_width="match_parent"
-                                                android:layout_height="wrap_content"
-                                                android:text="negocio de electronica"
-                                                android:maxLines="2"
-                                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                                android:textSize="12sp" />
-
-                                        </LinearLayout>
-
-                                        <LinearLayout
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:layout_weight="1"
-                                            android:gravity="center_vertical|right">
-
-                                            <Button
-                                                android:layout_width="wrap_content"
-                                                android:layout_height="37dp"
-                                                android:text="@string/campo_seguir"
-                                                android:textSize="12sp" />
-                                        </LinearLayout>
-                                    </LinearLayout>
-
-                                </LinearLayout>
-
-
-
-                            </LinearLayout>
-
-
-                        </androidx.cardview.widget.CardView>
+                        android:layout_marginBottom="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="16dp"
+                        app:cardElevation="0dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <TextView
-                                android:autoLink="phone"
-                                android:id="@+id/action_agregar_favorito"
+                            <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:paddingBottom="10dp"
-                                android:paddingRight="16dp"
-                                android:paddingTop="16dp"
-                                android:clickable="true"
-                                android:background="?attr/selectableItemBackground"
-                                android:drawableLeft="@drawable/ic_celular"
-                                android:drawablePadding="16dp"
-                                android:text="+53 5835-88-01" />
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
 
-                            <TextView
-                                android:autoLink="phone"
-                                android:id="@+id/action_agregar_favoritod"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:paddingBottom="10dp"
-                                android:paddingRight="16dp"
-                                android:paddingTop="16dp"
-                                android:clickable="true"
-                                android:background="?attr/selectableItemBackground"
-                                android:drawableLeft="@drawable/ic_telefono"
-                                android:drawablePadding="16dp"
-                                android:text="+57 833-85-88" />
+                                <ImageView
+                                    android:id="@+id/avatar_negocio"
+                                    android:layout_width="56dp"
+                                    android:layout_height="56dp"
+                                    android:src="@drawable/ic_account_circle" />
 
-                            <TextView
-                                android:autoLink="email"
-                                android:id="@+id/action_agregar_favoritodd"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:paddingBottom="10dp"
-                                android:paddingRight="16dp"
-                                android:paddingTop="16dp"
-                                android:clickable="true"
-                                android:background="?attr/selectableItemBackground"
-                                android:drawableLeft="@drawable/ic_correo"
-                                android:drawablePadding="16dp"
-                                android:text="pparce@nauta.cu" />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_weight="1"
+                                        android:gravity="center_vertical"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="pparce"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                            android:textSize="14sp" />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:maxLines="2"
+                                            android:text="negocio de electronica"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                            android:textSize="12sp" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center_vertical|right">
+
+                                        <Button
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="37dp"
+                                            android:text="@string/campo_seguir"
+                                            android:textSize="12sp" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                            </LinearLayout>
+
 
                         </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                        android:id="@+id/divider3d"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/action_agregar_favorito"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autoLink="phone"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:drawableLeft="@drawable/ic_celular"
+                            android:drawablePadding="16dp"
+                            android:paddingTop="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingBottom="10dp"
+                            android:text="+53 5835-88-01" />
+
+                        <TextView
+                            android:id="@+id/action_agregar_favoritod"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autoLink="phone"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:drawableLeft="@drawable/ic_telefono"
+                            android:drawablePadding="16dp"
+                            android:paddingTop="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="16dp"
+                            android:text="+57 833-85-88" />
+
+                        <TextView
+                            android:id="@+id/action_agregar_favoritodd"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autoLink="email"
+                            android:background="?attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:drawableLeft="@drawable/ic_correo"
+                            android:drawablePadding="16dp"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingBottom="10dp"
+                            android:text="pparce@nauta.cu" />
 
                     </LinearLayout>
 
@@ -228,14 +219,6 @@
 
 
             </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-
-            </LinearLayout>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

@@ -7,10 +7,11 @@
         </shape>
     </item>
     <item
-        android:right="5dp">
+        android:left="4dp"
+        android:right="4dp">
         <shape android:shape="rectangle">
             <solid android:color="?attr/colorAccent" />
-            <corners android:topRightRadius="100dp" android:bottomRightRadius="100dp" />
+            <corners android:radius="50dp" />
         </shape>
     </item>
 

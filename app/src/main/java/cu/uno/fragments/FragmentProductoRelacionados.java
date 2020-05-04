@@ -3,13 +3,11 @@ package cu.uno.fragments;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
@@ -27,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class FragmentListadoMosaico extends Fragment {
+public class FragmentProductoRelacionados extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -46,7 +44,7 @@ public class FragmentListadoMosaico extends Fragment {
     private String mParam2;
 
 
-    public FragmentListadoMosaico() {
+    public FragmentProductoRelacionados() {
         // Required empty public constructor
     }
 
@@ -60,18 +58,12 @@ public class FragmentListadoMosaico extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_listado_mosaico, container, false);
+        view = inflater.inflate(R.layout.fragment_producto_relacionado, container, false);
         initView();
         return view;
     }
 
     private void initView() {
-
-        Bundle bundle = getArguments();
-        if (bundle != null) {
-            ENCABEZADO = bundle.getBoolean("ENCABEZADO");
-        }
-//
         recycler = view.findViewById(R.id.recyclerview);
         layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         adapter = new AdapterListadoMosaico(context, getListaNotas(), false);

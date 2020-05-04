@@ -26,6 +26,7 @@
 
     <cu.uno.utiles.MovableButton
         android:id="@+id/add_imagen"
+        android:background="@drawable/background_round_buttom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"

@@ -12,6 +12,7 @@
     <string name="campo_titulo">Título</string>
     <string name="campo_precio">Precio</string>
     <string name="campo_descripcion">Descripción</string>
+    <string name="campo_opinion">Opinión</string>
     <string name="campo_agregar_foto">Agregar Imagen</string>
     <string name="campo_publicar">Publicar</string>
     <string name="campo_seguir">Seguir</string>
@@ -20,6 +21,7 @@
 
     <string name="titulo_contacto">Contacto</string>
     <string name="titulo_descripcion">Descripción</string>
+    <string name="titulo_sin_opiniion">No hay opiniones que mostrar</string>
 
 
     <string name="fab_producto">Nuevo Producto</string>
@@ -68,8 +70,6 @@
 
     <string name="title_activity_vista_producto">VistaProducto</string>
     <string name="large_text">
-        "Material is the metaphor.\n\n"
-
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
         "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
         "technologically advanced and open to imagination and magic.\n"
@@ -139,6 +139,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_favoritos">Favoritos</string>
     <string name="title_activity_add_producto">Nuevo Producto</string>
+    <string name="title_activity_add_opinio">Publicar Opinión</string>
     <string name="title_activity_add_solicitud">Nueva Solicitud</string>
 
     <string name="imagepicker_multiselect_done">Aceptar</string>
