@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,8 +29,9 @@ import cu.uno.R;
 import cu.uno.fragments.FragmentListadoOpiniones;
 import cu.uno.modelos.ModeloOpinion;
 import cu.uno.utiles.ScrollFeedbackRecyclerView;
+import cu.uno.utiles.WrapContentHeightViewPager;
 
-public class ActivityVistaProducto extends AppCompatActivity implements ScrollFeedbackRecyclerView.Callbacks {
+public class ActivityVistaProducto extends AppCompatActivity{
 
     TabLayout tab;
     ViewPager pager;
@@ -36,6 +39,7 @@ public class ActivityVistaProducto extends AppCompatActivity implements ScrollFe
     private AppBarLayout mAppBarLayout;
     private Toolbar toolbar;
     FloatingActionButton fab;
+    WrapContentHeightViewPager wrapContentHeightViewPager;
     int auxCont = 0;
 
     @Override
@@ -47,6 +51,7 @@ public class ActivityVistaProducto extends AppCompatActivity implements ScrollFe
     }
     private void initView(){
         initFAB();
+        wrapContentHeightViewPager = findViewById(R.id.viewpager);
         toolbar =findViewById(R.id.toolbar);
         mAppBarLayout = findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
@@ -55,9 +60,8 @@ public class ActivityVistaProducto extends AppCompatActivity implements ScrollFe
         tab = (TabLayout) findViewById(R.id.tab);
         tab.addTab(tab.newTab().setText(getResources().getString(R.string.tab_producto_informacion)));
         tab.addTab(tab.newTab().setText(getResources().getString(R.string.tab_producto_opiniones)));
-        tab.addTab(tab.newTab().setText(getResources().getString(R.string.tab_producto_relacionados)));
 
-        pager = (ViewPager) findViewById(R.id.viewpager);
+        pager = findViewById(R.id.viewpager);
         pagerAdaptor = new ViewPagerProducto(this, getSupportFragmentManager(), tab.getTabCount());
         pager.setAdapter(pagerAdaptor);
         pager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tab));
@@ -66,6 +70,11 @@ public class ActivityVistaProducto extends AppCompatActivity implements ScrollFe
             public void onTabSelected(TabLayout.Tab tab) {
                 pager.setCurrentItem(tab.getPosition());
                 if (tab.getPosition() == 1) {
+                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                    layoutParams.height = 10;
+                    pager.setLayoutParams(layoutParams);
+
                     fab.animate().scaleX(1).setDuration(100).start();
                     fab.animate().scaleY(1).setDuration(100).start();
                 } else {
@@ -139,17 +148,5 @@ public class ActivityVistaProducto extends AppCompatActivity implements ScrollFe
             onBackPressed();
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean isAppBarCollapsed() {
-        final int appBarVisibleHeight = (int) (mAppBarLayout.getY() + mAppBarLayout.getHeight());
-        final int toolbarHeight = toolbar.getHeight();
-        return (appBarVisibleHeight == toolbarHeight);
-    }
-
-    @Override
-    public void setExpanded(boolean expanded) {
-        mAppBarLayout.setExpanded(expanded, true);
     }
 }

@@ -78,7 +78,7 @@
         <Button
             android:layout_gravity="right"
             android:id="@+id/button"
-            style="@style/Widget.AppCompat.Button.Borderless"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Olvide mi contraseña"
@@ -106,7 +106,7 @@
 
             <Button
                 android:id="@+id/buttond"
-                style="@style/Widget.AppCompat.Button.Borderless"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="registrarse"
@@ -127,7 +127,7 @@
 
             <Button
                 android:id="@+id/mas_tarde"
-                style="@style/Widget.AppCompat.Button.Borderless"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="mas tarde"

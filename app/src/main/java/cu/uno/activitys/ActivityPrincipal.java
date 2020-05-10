@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.android.material.appbar.AppBarLayout;
@@ -39,6 +40,7 @@ public class ActivityPrincipal extends AppCompatActivity implements ScrollFeedba
     AppBarLayout appBarLayout;
     Context context = ActivityPrincipal.this;
     DrawerLayout drawer;
+    ImageView avatar;
     int atras = 0;
 
     @Override
@@ -77,6 +79,15 @@ public class ActivityPrincipal extends AppCompatActivity implements ScrollFeedba
                 } else if (id == R.id.nav_negocio) {
                     appBarLayout.setElevation(10);
                 }
+            }
+        });
+
+        avatar = (navigationView.getHeaderView(0)).findViewById(R.id.avatar);
+        avatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawer.closeDrawers();
+                startActivity(new Intent(ActivityPrincipal.this, ActivityUsuario.class));
             }
         });
     }

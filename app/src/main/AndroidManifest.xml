@@ -19,6 +19,11 @@
         android:theme="@style/AppTheme"
         tools:ignore="LockedOrientationActivity">
         <activity
+            android:name=".activitys.ActivityUsuario"
+            android:label="@string/title_activity_favoritos"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
             android:name=".activitys.ActivityFavoritos"
             android:label="@string/title_activity_favoritos"
             android:screenOrientation="portrait"
